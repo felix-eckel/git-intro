@@ -1,0 +1,67 @@
+/*!
+* 
+*/
+.icon{
+	width:96px;
+	height:96px;
+}
+
+.workspace{
+	padding-top: 48px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;">
+}
+
+.project{
+	position: absolute;
+	border-radius: 40px;
+}
+
+.project1{
+	background-image: linear-gradient(to left, cyan, cyan);
+}
+
+.project2{
+	background-image: linear-gradient(to left, red, red);
+}
+
+.project3{
+	background-image: linear-gradient(to left, yellow, yellow);
+}
+
+.project4{
+	background-image: linear-gradient(to left, green, green);
+}
+
+.project-merge{
+	background-image: linear-gradient(to left, green, green, green, yellow, yellow, yellow);
+}
+
+.userproject{
+	width: 40px;
+	height: 40px;
+	margin-top: 129px;
+}
+
+.user1project{
+	margin-left: -355px;
+}
+
+.user2project{
+	margin-left: 562px;
+}
+
+.serverproject{
+	width: 10px;
+	height: 10px;
+	margin-top: -132px;
+	margin-left: -15px;
+}
+
+.versionproject{
+	width: 40px;
+	height: 40px;
+	margin-top: -315px;
+}

@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>An Introductory Workshop to GitLab</title>
+
+		<meta name="description" content="A tutorial for gitlab">
+		<meta name="author" content="Felix Eckel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="revealjs/dist/reset.css">
+		<link rel="stylesheet" href="revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="revealjs/dist/theme/league_cstm.css" id="theme">
+		<link rel="stylesheet" href="./gitlab_tutorial.css">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="start">
+					<a href="https://about.gitlab.com">
+						<img src="https://about.gitlab.com/images/press/logo/svg/gitlab-logo-gray-rgb.svg" alt="gitlab logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;">
+					</a>
+					<h3>An Introductory Workshop to GitLab</h3>
+					<div class="authors">
+						<p>Created by</p>
+						Felix Eckel<br>
+						Johannes Stampa<br>
+						and Yunus Esel</p>
+					</div>
+						
+					
+				</section>
+
+				<section>
+					<h2>What you will learn</h2>
+					<p class="fragment">
+					What is git and GitLab
+					</p>
+					<p class="fragment">
+					How to use GitLab in science
+					</p>
+					<p class="fragment">
+					How to use GitLab in collaborations
+					</p>
+					<p class="fragment">
+					How use GitLab for project documentation
+					</p>
+					
+					
+					
+				</section>
+
+				<!-- What is GitLab -->
+				<section>
+					<section id="what-is-gitlab">
+						<h2>What is GitLab</h2>
+						<br>
+						<a href="#/what-is-gitlab-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+					<section id="what-is-gitlab-overview">
+						<h2>The Basics</h2>
+						<p>GitLab is a implementation of the tool <em>git</em>. It combines version control, data synchronization, and collaborations on projects for single users and teams.</p>
+						<p>The GitLab implementation is a private environment. Only users with access rights can view and edit files.</p>
+					</section>
+					<section data-auto-animate>
+						<h2>Why should I use GitLab</h2>
+						<div class="two-col-container">
+							<div class="two-col-item">
+								<p>No more version issues.<br>All edits to a file are saved in the history</p>
+							</div>
+							<div id="forreal3" class="two-col-item">
+								<p id="version-text">Project.py</p>
+							</div>
+						</div>
+					</section>
+					<section data-auto-animate>
+						<h2>Why should I use GitLab</h2>
+						<div class="two-col-container">
+							<div class="two-col-item">
+								<p>No more overwritten or deleted files.<br>Easy error-tracking and versatile step-back functionality.</p>
+							</div>
+							<div id="not-found" class="two-col-item">
+								<img id="file-not-found" src="resources/file_not_found.png">
+								<img id="why-guy" src="resources/why-guy.png">
+							</div>
+						</div>
+					</section>
+					<section data-auto-animate>
+						<h2>Why should I use GitLab</h2>
+						<div class="two-col-container">
+							<div class="two-col-item">
+								<p>No more lost users.<br>A wiki for Project documentation and communication channels with users.</p>
+							</div>
+							<div class="two-col-item">
+								<object id="ikea-man" data="resources/ikea_man.svg" width="250"></object>
+							</div>
+						</div>
+					</section>
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>How it works</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver2" class="project project2 serverproject"></div>
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+
+						<div data-id="example-project1-copy0" class="project project1 serverproject" ></div>
+						<div data-id="example-project1-copy1" class="project project1 serverproject" ></div>
+						<div data-id="example-project1-copy4" class="project project1 serverproject" ></div>
+						<div data-id="example-project1-copy2" class="project project1 serverproject" ></div>
+						<div data-id="example-project1-copy3" class="project project1 serverproject" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>A new project<br>has been created in the GitLab</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Cloning</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver2" class="project project2 serverproject"></div>
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+						
+						<div data-id="example-project1-copy0" class="project project1 userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project1 userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project1 userproject user1project" ></div>
+						<div data-id="example-project1-copy2" class="project project1 userproject user1project" ></div>
+						<div data-id="example-project1-copy3" class="project project1 userproject user1project" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>Cloning creates a local copy of the project<br>on the machine of the user</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Editing</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+
+						<div data-id="example-project1-copy0" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project1 userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy2" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy3" class="project project2 userproject user1project" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>Edits on the local copy<br>of the project can be made</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Pushing</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+						
+						<div data-id="example-project1-copy0" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project1 userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project2 serverproject" ></div>
+						<div data-id="example-project1-copy2" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy3" class="project project2 serverproject" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>The edits can be pushed<br>to the project in the GitLab</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Pulling</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+						
+						<div data-id="example-project1-copy0" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project1 userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project2 serverproject" ></div>
+						<div data-id="example-project1-copy2" class="project project2 userproject user1project" ></div>
+						<div data-id="example-project1-copy3" class="project project2 userproject user2project" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>Other users can pull the new edits<br>to their local copy of the project</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>More Editing</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+						
+						<div data-id="example-project1-copy0" class="project project4 userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project3 userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project2 serverproject" ></div>
+						<div data-id="example-project1-copy2" class="project project4 userproject user1project" ></div>
+						<div data-id="example-project1-copy3" class="project project3 userproject user2project" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>All users can apply their edits<br>in their local copies of the projects</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Merging</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver3" class="project project3 serverproject"></div>
+						<div data-id="example-project-staticserver4" class="project project4 serverproject"></div>
+						<div data-id="example-project-staticserver1" class="project project1 serverproject"></div>
+						
+						<div data-id="example-project1-copy0" class="project project-merge userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project-merge userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project2 serverproject" ></div>
+						<div data-id="example-project1-copy2" class="project project-merge serverproject" ></div>
+						<div data-id="example-project1-copy3" class="project project-merge serverproject" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>Multiple edits of one project<br>can be merged into a new version</p>
+					</section>
+					
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Versioning</h2>
+						<div data-id="example-workspace" class="workspace">
+						<div><i data-feather="hard-drive" data-id="example-server" class="icon"></i></div>
+						<div style="flex-basis: 100%; height: 0;"></div>
+						
+						<div data-id="example-project-staticserver3" class="project project3 versionproject" style="margin-left:-15px;"></div>
+						<div data-id="example-project-staticserver4" class="project project4 versionproject" style="margin-left:85px;"></div>
+						<div data-id="example-project-staticserver1" class="project project1 versionproject" style="margin-left:-215px;"></div>
+						
+						<div data-id="example-project1-copy0" class="project project-merge userproject user1project" ></div>
+						<div data-id="example-project1-copy1" class="project project-merge userproject user2project" ></div>
+						<div data-id="example-project1-copy4" class="project project2 versionproject" style="margin-left:-115px;"></div>
+						<div data-id="example-project1-copy2" class="project project-merge versionproject" style="margin-left:185px;"></div>
+						<div data-id="example-project1-copy3" class="project project-merge serverproject" ></div>
+						
+						<div data-id="example-users" style="padding-top: 48px;"><i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i>
+						<span style="padding-left: 250px;"></span>
+						<i data-feather="user" class="icon"></i>
+						<i data-feather="monitor" class="icon"></i></div>
+						</div>
+						<p>All edits to the projects<br>are available in the project history</p>
+					</section>
+					<section>
+						<a href="#/what-is-gitlab">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/start">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Back to start</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/how-to-clone">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+				</section>
+				
+				<!-- How to clone and pull a GitLab project -->
+				<section>
+					<section id="how-to-clone">
+						<h2>How to clone and pull a GitLab project</h2>
+						<br>
+						<a href="#/how-to-clone-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+					
+					<section id="how-to-clone-overview">
+						<h2>Overview</h2>
+						<p>The most basic operation. If you want to use a code or project that has been distributed in the GitLab, you want to make a local copy on your machine (<em>cloning</em>) or want to get the latest updates to this project (<em>pulling</em>)</p>
+					</section>
+					<section data-auto-animate>
+						<h2>Get access to the GitLab</h2>
+						<img src="resources/ssh_keygen.png" id="ssh-keygen">
+						<p>Use <code>cd ~/.ssh</code> to navigate to the hidden ssh directory in your home directory</p>
+					</section>
+					<section data-auto-animate>
+						<h2>Get access to the GitLab</h2>
+						<img src="resources/ssh_keygen.png" id="ssh-keygen">
+						<p>Generate a key pair with <code>ssh-keygen</code>. Enter a filename (e.g. "github"). Optionally enter a passphrase.</p>
+					</section>
+					<section data-auto-animate>
+						<h2>Get access to the GitLab</h2>
+						<img src="resources/ssh_keygen.png" id="ssh-keygen">
+						<p>Use <code>cat</code> to open the public key of your pair. It has the ending ".pub" (e.g. github.pub). Copy everything.</p>
+					</section>
+					<section data-auto-animate>
+						<h2>Get access to the GitLab</h2>
+						<img src="resources/gitlab_user_preferences.png" id="add-ssh-key">
+						<p>In GitLab go to the preferences page of your account. Under "SSH Keys" paste the content of the public key, give it a name and add the key.</p>
+					</section>
+					<section>
+						<h2>Clone the project</h2>
+						<p>Get the ssh link to the project (<em>remote repository</em>) you want to clone</p>
+						<img src="resources/git_clone_example.png" id="get-ssh-link">
+						<p><a href="https://github.com/felix-eckel/git-intro">git-intro</a></p>
+					</section>
+					<section>
+						<p>Open your console and use <code>cd</code> to navigate to the path were you want to create your local repository</p>
+					</section>
+					<section>
+						Use <code>git clone</code> to create a local repository
+						<pre><code data-trim data-line-numbers>
+						git clone git@github.com:felix-eckel/git-intro.git
+						</code></pre>
+					</section>
+					<section>
+						<p>You now have a local copy of the project on your machine (<em>local repository</em>)</p>
+					</section>
+					<section>
+						<img src="resources/wild_update.png">
+						<p>In the meantime, an update has been made on the local repository</p>
+						<p>Let's pull it!</p>
+					</section>
+					<section>
+						Use <code>git pull</code> to get the latest changes in the remote repository
+						<pre><code data-trim data-line-numbers>
+						git pull
+						</code></pre>
+					</section>
+					<section>
+						<a href="#/how-to-clone">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/what-is-gitlab">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Previous section</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/how-to-create">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+					
+				</section>
+				
+				<!-- How to create a GitLab project -->
+				<section>
+					<section id="how-to-create">
+						<h2>How to create a GitLab project</h2>
+						<br>
+						<a href="#/how-to-create-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+
+					<section id="how-to-create-overview">
+						<h2>Overview</h2>
+						<p>Distribute code yourself. If you want to share projects or code with others or just want to profit from the advantages of GitLab you need your own project</p>
+					</section>
+					
+					<section data-auto-animate >
+						<p>Go to the group in the GitLab group where you want to create your project.</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_intro_group_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_intro_group.png" class="screenshot-off">
+							</div>
+						</div>
+						<p>&nbsp;</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<p>Go to the group in the GitLab group where you want to create your project.</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_intro_group_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_intro_group.png" class="screenshot-on">
+							</div>
+						</div>
+						<p>Choose <em>New project</em></p>
+					</section>
+
+					<section>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_blank_project.png" class="screenshot-highlight">
+						</div>
+						<p>Select <em>Create blank project</em></p>
+					</section>
+
+					<section data-auto-animate >
+						<p>Almost there!</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_create_project_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_name.png" class="screenshot-off">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_desc.png" class="screenshot-off">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_readme.png" class="screenshot-off">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_create.png" class="screenshot-off">
+							</div>
+						</div>
+						<p>&nbsp;</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<p>Almost there!</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_create_project_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_name.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_desc.png" class="screenshot-off">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_readme.png" class="screenshot-off">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_create.png" class="screenshot-off">
+							</div>
+						</div>
+						<p>Give your project a <strong>meaningful</strong> name</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<p>Almost there!</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_create_project_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_name.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_desc.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_readme.png" class="screenshot-off">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_create.png" class="screenshot-off">
+							</div>
+						</div>
+						<p>Give your project a very brief description</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<p>Almost there!</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_create_project_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_name.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_desc.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_readme.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_create.png" class="screenshot-off">
+							</div>
+						</div>
+						<p>Make sure to activate the creation of a README file</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<p>Almost there!</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_create_project_base.png" class="screenshot-base">
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_name.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_desc.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_readme.png" class="screenshot-on">
+							</div>
+							<div class="screenshot-layer">
+								<img src="resources/gitlab_create_project_create.png" class="screenshot-on">
+							</div>
+						</div>
+						<p>Select <em>Create project</em></p>
+					</section>
+
+					<section>
+						<p>A remote repository has been created in the GitLab</p>
+						<p>Now, lets clone it to a local repository
+							<br>
+							You already <a href="#/how-to-clone">know</a> how this works
+						</p>
+					</section>
+					<section>
+						<a href="#/how-to-create">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/how-to-clone">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Previous section</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/how-to-edit">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+				</section>
+				
+				<!-- How to make edits to a GitLab project -->
+				<section>
+					<section id="how-to-edit">
+						<h2>How to make edits and commits to a GitLab project</h2>
+						<br>
+						<a href="#/how-to-edit-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+					<section id="how-to-edit-overview">
+						<h2>Overview</h2>
+						<p>Develop your project. Create new files, edit existing files and test your code. Then, you <em>add</em> your changes to a <em>commit</em> and <em>push</em> this commit to the remote repository</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<h2 id="what-is-commit">What is a commit?</h2>
+						<div class="canvas">
+							<i data-feather="archive" data-id="package" class="package canvas-content"></i>
+							<i data-feather="monitor" data-id="commit-monitor" class="commit-monitor canvas-content"></i>
+							<div class="canvas-content local-file file1">
+								<i data-feather="file" data-id="file1" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file1-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content local-file file2">
+								<i data-feather="file" data-id="file2" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content local-file file3">
+								<i data-feather="file" data-id="file3" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+						</div>
+						<p class="commit-subtitle">Imagine the commit as a parcel that sends your edits to the remote repository</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<h2 id="what-is-commit">What is a commit?</h2>
+						<div class="canvas">
+							<i data-feather="archive" data-id="package" class="package canvas-content"></i>
+							<i data-feather="monitor" data-id="commit-monitor" class="commit-monitor canvas-content"></i>
+							<div class="canvas-content file1">
+								<i data-feather="file" data-id="file1" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file1-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2">
+								<i data-feather="file" data-id="file2" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3">
+								<i data-feather="file" data-id="file3" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+						</div>
+						<p class="commit-subtitle">The local repository contains some files<br>&nbsp;</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<h2 id="what-is-commit">What is a commit?</h2>
+						<div class="canvas">
+							<i data-feather="archive" data-id="package" class="package canvas-content"></i>
+							<i data-feather="monitor" data-id="commit-monitor" class="commit-monitor canvas-content"></i>
+							<div class="canvas-content file1">
+								<i data-feather="file" data-id="file1" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file1-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2">
+								<i data-feather="file" data-id="file2" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3">
+								<i data-feather="file" data-id="file3" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4">
+								<i data-feather="file" data-id="file4" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2">
+								<i data-feather="file" data-id="file2-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-copy-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3">
+								<i data-feather="file" data-id="file3-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-copy-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4">
+								<i data-feather="file" data-id="file4-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-copy-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+						</div>
+						<p class="commit-subtitle">Files are edited<br>new files are created</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<h2 id="what-is-commit">What is a commit?</h2>
+						<div class="canvas">
+							<i data-feather="archive" data-id="package" class="package canvas-content"></i>
+							<i data-feather="monitor" data-id="commit-monitor" class="commit-monitor canvas-content"></i>
+							<div class="canvas-content file1">
+								<i data-feather="file" data-id="file1" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file1-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2">
+								<i data-feather="file" data-id="file2" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3">
+								<i data-feather="file" data-id="file3" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4">
+								<i data-feather="file" data-id="file4" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2 file2-package">
+								<i data-feather="file" data-id="file2-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-copy-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3 file3-package">
+								<i data-feather="file" data-id="file3-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-copy-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4 file4-package">
+								<i data-feather="file" data-id="file4-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-copy-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+						</div>
+						<p class="commit-subtitle">Changes are <em>added</em> to the "commit-parcel"<br>&nbsp;</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<h2 id="what-is-commit">What is a commit?</h2>
+						<div class="canvas">
+							<i data-feather="archive" data-id="package" class="package canvas-content"></i>
+							<i data-feather="tag" data-id="commit-label" class="commit-label canvas-content"></i>
+							<div class="canvas-content commit-label-description"><p>changes</p></div>
+							<i data-feather="monitor" data-id="commit-monitor" class="commit-monitor canvas-content"></i>
+							<div class="canvas-content file1">
+								<i data-feather="file" data-id="file1" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file1-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2">
+								<i data-feather="file" data-id="file2" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3">
+								<i data-feather="file" data-id="file3" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4">
+								<i data-feather="file" data-id="file4" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2 file2-package closed">
+								<i data-feather="file" data-id="file2-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-copy-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3 file3-package closed">
+								<i data-feather="file" data-id="file3-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-copy-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4 file4-package closed">
+								<i data-feather="file" data-id="file4-copy" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-copy-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+						</div>
+						<p class="commit-subtitle">The <em>commit</em> closes the parcel<br>and labels what is inside</p>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="ease-in-out">
+						<h2 id="what-is-commit">What is a commit?</h2>
+						<div class="canvas">
+							<i data-feather="archive" data-id="package" class="package-sent canvas-content"></i>
+							<i data-feather="truck" data-id="commit-truck" class="commit-truck canvas-content"></i>
+							<i data-feather="monitor" data-id="commit-monitor" class="commit-monitor canvas-content"></i>
+							<div class="canvas-content file1">
+								<i data-feather="file" data-id="file1" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file1-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file2">
+								<i data-feather="file" data-id="file2" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content">
+									<path class="file-content" d="M25 55 L50 55 M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file2-content-edit">
+									<path class="file-content-delete" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+							<div class="canvas-content file3">
+								<i data-feather="file" data-id="file3" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content">
+									<path class="file-content" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file3-content-edit">
+									<path class="file-content-new" d="M25 55 L50 55"/>
+								</svg>
+							</div>
+							<div class="canvas-content file4">
+								<i data-feather="file" data-id="file4" class="commit-file"></i>
+								<svg height="75" width="75" viewBox="0 0 75 75" data-id="file4-content">
+									<path class="file-content-new" d="M25 40 L50 40 M25 25 L33 25"/>
+								</svg>
+							</div>
+						</div>
+						<p class="commit-subtitle">With <em>push</em> the commit-parcel is sent on its way to the remote repository</p>
+					</section>
+
+					<section>
+						<p>Use <code>cd</code> to naviagte to your newly created and cloned project on your machine</p>
+					</section>
+
+					<section>
+						<p>Use the <code>nano</code> editor to write something into the readme file</p>
+						<pre><code data-trim data-line-numbers>nano README.md</code></pre>
+						<div style="height: 30px;"></div>
+						<p>Save the changes with <span class="key">CTRL/CMD</span> + <span class="key">O</span></p>
+						<p>Confirm with <span class="key">ENTER</span></p>
+						<p>Close <code>nano</code> with <span class="key">CTRL/CMD</span> + <span class="key">X</span></p>
+					</section>
+
+					<section>
+						<p>Create a new file using <code>nano</code></p>
+						<pre><code data-trim data-line-numbers>nano myfile.txt</code></pre>
+						<p>Save and exit <code id="tooltip-source-2" class="tooltip-source">nano</code> just like in the previous step</p>
+						<div id="tooltip-box-2" class="tooltip-box">
+							<p>Save the changes with <span class="key key-small">CTRL/CMD</span> + <span class="key key-small">O</span></p>
+							<p>Confirm with <span class="key key-small">ENTER</span></p>
+							<p>Close <code>nano</code> with <span class="key key-small">CTRL/CMD</span> + <span class="key key-small">X</span></p>
+						</div>
+					</section>
+
+					<section>
+						<p>Add the recent changes to the next commit</p>
+						<pre><code data-trim data-line-numbers>
+							git add -A
+						</code></pre>
+						<p>With the <code>-A</code> option, all edits are added at once</p>
+					</section>
+
+					<section>
+						<p>Often, you do not want all files to go into the remote repository. For example, files with sensitive information, temporary files or image files.</p>
+						<p>These files can be specified in a .gitignore file</p>
+						<p>Create a .gitignore file using <code>nano</code></p>
+						<pre><code data-trim data-line-numbers>
+							nano .gitignore
+						</code></pre>
+					</section>
+
+					<section>
+						<p>Add exceptions for .png files and temporary files</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitignore.png">
+						</div>
+						<p><span id="tooltip-source-3" class="tooltip-source">Save and exit</span> the .gitignore file</p>
+						<div id="tooltip-box-3" class="tooltip-box">
+							<p>Save the changes with <span class="key key-small">CTRL/CMD</span> + <span class="key key-small">O</span></p>
+							<p>Confirm with <span class="key key-small">ENTER</span></p>
+							<p>Close <code>nano</code> with <span class="key key-small">CTRL/CMD</span> + <span class="key key-small">X</span></p>
+						</div>
+					</section>
+
+					<section>
+						<p>Add the .gitignore file to the commit</p>
+						<pre><code data-trim data-line-numbers>
+							git add .gitignore
+						</code></pre>
+					</section>
+
+					<section>
+						Commit all added changes to the local repository
+						<pre><code data-trim data-line-numbers>
+							git commit -m "new file and readme"
+						</code></pre>
+						<p>The <code>-m</code> is necessary. Here, we give a short description of the commit</p>
+						<p>Meaningful messages are for example<br>"Feature XY implemented" or "Error 251 fixed"</p>
+					</section>
+
+					<section>
+						<p>In a real scenario always make sure you got all recent changes made by your collaborateurs to the project before you push your own changes</p>
+						<p>Do so by pulling the project</p>
+						<pre><code data-trim data-line-numbers>
+							git pull
+						</code></pre>
+						<div style="height: 30px;"></div>
+						<p class="addendum">Of course, here this is optional<br>You still should make it a habit to always pull before you push</p>
+					</section>
+					<section>
+						<p>If your local repository is on the newest stand, push your commit</p>
+						<pre><code data-trim data-line-numbers>
+							git push
+						</code></pre>
+						<p>You can push multiple commits at once</p>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="merge-conflict-header">Merge conflicts</h2>
+						<p>A merge conflict is what happens if two contradicting edits exist in two repositories</p>
+						<img src="resources/spiderman.jpg" class="meme">
+						<p>We have to manually tell git which edit is the one to go for</p> 
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="merge-conflict-header">Merge conflict</h2>
+						<img src="resources/merge-conflict_message.png">
+						<p>A merge conflict is <em>only</em> issued, if two different edits to the same line exist</p>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="merge-conflict-header">Merge conflict</h2>
+						<img src="resources/merge_conflict_resolve.png">
+						<p>Use a text editor to open the text files for which the conflict was raised. For each line or block of lines that has an unresolved conflict, both versions are indicated. Manually delete all the lines you wish to discard and save the file.</p>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="merge-conflict-header">Merge conflict</h2>
+						<p>Add the resolved files to a new commit and push the commit to the remote repository. The merge conflict should now be resolved.</p>
+					</section>
+					<section data-auto-animate data-auto-animate-restart>
+						<h2>Further git commands</h2>
+						<img src="resources/git_log.png">
+						<p><code>log</code> displays the history of all commits in the repository. Each commit can be identified by its <em>commit hash</em>.</p>
+						<pre><code data-trim data-line-numbers>
+							git log
+						</code></pre>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Further git commands</h2>
+						<img src="resources/git_status.png">
+						<p><code>status</code> displays the status of all files that have been modified</p>
+						<pre><code data-trim data-line-numbers>
+							git status
+						</code></pre>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Further git commands</h2>
+						<p><code>checkout</code> rolls back to a previous commit by using the commit hash which is listed by the <code>log</code> command</p>
+						<pre><code data-trim data-line-numbers>
+							git checkout 4349c53
+						</code></pre>
+					</section>
+
+					<section>
+						<a href="#/how-to-edit">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/how-to-create">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Previous section</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/how-to-branch">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+				</section>
+				
+				<!-- How to work with branches -->
+				<section>
+					<section id="how-to-branch">
+						<h2>How to work with branches</h2>
+						<br>
+						<a href="#/how-to-branch-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+
+					<section id="how-to-branch-overview">
+						<h2>Overview</h2>
+						<p>Extend your project. Once you have developed a stable program you do not want to damage your code by developing experimental features.</p>
+						<p>With branches you can implement a new feature on a <em>branch</em> (i.e. a copy) of your project and test it thoroughly.</p>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Stable program</h2>
+						<div class="canvas">
+							<div data-id="main-project" class="branch-project canvas-content main-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file"></i>
+							</div>
+							<div data-id="branch-project" class="branch-project canvas-content main-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file"></i>
+							</div>
+							<p class="branch-subtitle canvas-content">A program in which to implement a new feature</p>
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Creating a branch</h2>
+						<div class="canvas">
+							<div data-id="main-project" class="branch-project canvas-content main-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file"></i>
+							</div>
+							<div data-id="branch-project" class="branch-project canvas-content new-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file"></i>
+							</div>
+							<div data-id="construction" class="canvas-content construction construction-off">
+								<img src="resources/Baustelle_schild_rotate.svg">
+							</div>
+							<p class="branch-subtitle canvas-content">A branch works like a copy of the project</p>
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Making edits</h2>
+						<div class="canvas">
+							<div data-id="main-project" class="branch-project canvas-content main-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file"></i>
+							</div>
+							<div data-id="branch-project" class="branch-project canvas-content new-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file new-file"></i>
+							</div>
+							<div data-id="construction" class="canvas-content construction construction-on">
+								<img src="resources/Baustelle_schild_rotate.svg">
+							</div>
+							<p class="branch-subtitle canvas-content">A new feature is implemented and thoroughly tested</p>
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Mergin branches</h2>
+						<div class="canvas">
+							<div data-id="main-project" class="branch-project canvas-content merge-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file"></i>
+							</div>
+							<div data-id="branch-project" class="branch-project canvas-content merge-branch">
+								<i data-feather="file" class="branch-project-file"></i>
+								<i data-feather="file" class="branch-project-file new-file"></i>
+							</div>
+							<p class="branch-subtitle canvas-content">Once everything works the changes are merged into the main branch</p>
+						</div>
+					</section>
+
+					<section>
+						<p>Create a new branch in your local repository and give it a name</p>
+						<pre><code data-trim data-line-numbers>
+							git checkout -b "name"
+						</code></pre>
+						<p>This creates a copy from your current branch and changes into that branch</p>
+					</section>
+					<section>
+						<p>Push your newly created branch into the remote repository</p>
+						<pre><code data-trim data-line-numbers>
+							git push origin "name"
+						</code></pre>
+					</section>
+					<section>
+						<p>When you want to push edits into your new branch you have to set the so-called <em>upstream branch</em></p>
+						<pre><code data-trim data-line-numbers>
+							git push --set-upstream origin "name"
+						</code></pre>
+						<p>You only need to do this with the first push, every other push works as usual</p>
+						<pre><code data-trim data-line-numbers>
+							git push
+						</code></pre>
+					</section>
+					<section>
+						<p>Make a change to your file using <code id="tooltip-source-1" class="tooltip-source">nano</code></p>
+						<div id="tooltip-box-1" class="tooltip-box">
+							<p>Open the file in <code>nano</code> with</p>
+							<pre><code data-trim data-line-numbers>nano "filename"</code></pre>
+							<p>Save the changes with <span class="key key-small">CTRL/CMD</span> + <span class="key key-small">O</span></p>
+							<p>Confirm with <span class="key key-small">ENTER</span></p>
+							<p>Close <code>nano</code> with <span class="key key-small">CTRL/CMD</span> + <span class="key key-small">X</span></p>
+						</div>
+						<p>Push it into the remote branch</p>
+						<pre><code data-trim data-line-numbers>
+							git add -A
+							git commit -m "a small edit"
+							git pull
+							git push
+						</code></pre>
+					</section>
+
+					<section>
+						<a href="#/how-to-branch">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/how-to-edit">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Previous section</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/how-to-merge">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+				</section>
+
+				<!-- How to merge two branches -->
+				<section>
+					<section id="how-to-merge">
+						<h2>How to merge branches</h2>
+						<br>
+						<a href="#/how-to-merge-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+					<section id="how-to-merge-overview">
+						<h2>Overview</h2>
+						<p>Distribute your update. Once you have enhanced your program in a seperate branch, <em>merge</em> it into your main branch so other users can profit from the latest update.</p>
+					</section>
+					<section>
+						<p>Change into the branch you want to merge <em>into</em></p>
+						<p>Use <code>checkout</code> to do so</p>
+						<pre><code data-trim data-line-numbers>
+							git checkout master
+						</code></pre>
+					</section>
+					<section>
+						<p>Use <code>merge</code> to merge a different branch</p>
+						<pre><code data-trim data-line-numbers>
+							git merge "name"
+						</code></pre>
+					</section>
+					<section>
+						<p>You might now want to delete your temporary branch</p>
+						<pre><code data-trim data-line-numbers>
+							git branch -d "name"
+						</code></pre>
+					</section>
+
+					<section>
+						<a href="#/how-to-merge">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/how-to-branch">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Previous section</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/how-to-manage">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+				</section>
+
+				<!-- How to manage a project in a group -->
+				<section>
+					<section id="how-to-manage">
+						<h2>How to manage a project in a group</h2>
+						<br>
+						<a href="#/how-to-manage-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+					<section id="how-to-manage-overview">
+						<h2>Overview</h2>
+						<p>Work together. With gitlab you can <em></em>track issues</em>, <em>request to merge</em> your contributions to the project or manage <em>user roles</em> in your project.</p>
+					</section>
+					<section>
+						<h2>Issue tracking</h2>
+						<div class="screenshot-cols">
+							<div class="screenshot-cols-img">
+								<div id="menu-issues" class="menu-highlight"></div>
+								<img src="resources/gitlab_menu.png">
+							</div>
+							<div class="screenshot-cols-text">
+								<p>You found a bug or issue in a project or have suggestions on how to improve the project?</p>
+								<p>Submit an issue to let the developer(s) know</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<p>Create an issue with <em>New Issue</em> and fill out the form.</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_new_issue.png">
+						</div>
+						<p>Be as specific as possible when describing the issue.<br>You can assign a specific developer who will be notified of your issue.</p>
+					</section>
+					<section>
+						<h2>Merge request</h2>
+						<div class="screenshot-cols">
+							<div class="screenshot-cols-img">
+								<div id="menu-merge" class="menu-highlight"></div>
+								<img src="resources/gitlab_menu.png">
+							</div>
+							<div class="screenshot-cols-text">
+								<p>You have made edits to a project in a branch?</p>
+								<p>Let the developer(s) know so they can merge it.</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<p>Create a request <em>New Merge Request</em> and select the source and target branch</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_merge_request.png">
+						</div>
+					</section>
+					<section>
+						<h2>Inivte others</h2>
+						<div class="screenshot-cols">
+							<div class="screenshot-cols-img">
+								<div id="menu-info" class="menu-highlight"></div>
+								<img src="resources/gitlab_menu.png">
+							</div>
+							<div class="screenshot-cols-text">
+								<p>You can invite other users via the <em>Members</em> tab in the <em>Project Information</em></em></p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<p>Search for users or enter their e-mail. You can choose a <em>user role</em>.</p>
+						<div class="screenshot-panel">
+							<img src="resources/gitlab_add_user.png">
+						</div>
+						<p>Optionally you can specify an expiry date to which access is permitted.</p>
+					</section>
+					<section>
+						<h2>User roles</h2>
+						<div class="user-arrow">
+							<svg viewBox="-5 0 30 100">
+								<path d="M10 100 L10 0 M0 85 L10 100 M20 85 L10 100"/>
+							</svg>
+							<p>Access rights</p>
+						</div>
+						<ul>
+							<li>Guest: </li>
+							<li>Reporter</li>
+							<li>Developer</li>
+							<li>Maintainer</li>
+							<li>Owner</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Dokumenting a project</h2>
+						<div class="screenshot-cols">
+							<div class="screenshot-cols-img">
+								<div id="menu-wiki" class="menu-highlight"></div>
+								<img src="resources/gitlab_menu.png">
+							</div>
+							<div class="screenshot-cols-text">
+								<p>You can write an extensive documentation of your project in the project-wiki.</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<a href="#/how-to-manage">
+							<i data-feather="chevrons-up" class="icon"></i>
+						</a>
+						<h4>Back to top</h4>
+						<div class="navigation-container">
+							<a href="#/how-to-merge">
+								<i data-feather="chevrons-left" class="icon"></i>
+								<h4>Previous section</h4>
+							</a>
+							<div style="width: 200px;"></div>
+							<a href="#/more">
+								<i data-feather="chevrons-right" class="icon"></i>
+								<h4>Next section</h4>
+							</a>
+						</div>
+					</section>
+				</section>
+				
+				<!-- More stuff -->
+				<section>
+					<section id="more">
+						<h2>More useful stuff</h2>
+						<br>
+						<a href="#/more-overview" >
+							<i data-feather="chevrons-down" class="icon"></i>
+						</a>
+					</section>
+					<section id="more-overview">
+						<h2>There is more...</h2>
+						<p>...to git and gitlab than ever could fit into a introductory tutorial.</p>
+						<p>Here are some mentionings of useful topics</p>
+					</section>
+					<section data-auto-animate>
+						<h2>I want to delete a project!</h2>
+						<p>Only users with <em>Owner</em> rights can delete projects</p>
+					</section>
+					<section data-auto-animate>
+						<h2>I have pushed sensitive data into the repository</h2>
+						<p>Even if you delete the sensitive information in the next commit, the information is still available in the history log. Ask a user with <em>Owner</em> rights for help.</p>
+						<p class="addendum">Better: make sure to not commit sensitive data. If your project contains files with sensitive data use the .gitignore file to exclude them from commits.</p>
+					</section>
+					<section data-auto-animate>
+						<h2>How can I do XY?</h2>
+						<p><strong>Try to google your question.</strong> git is being used by millions of users. In most cases, your question has already been asked and answered.</p>
+						<p><strong>Read the error message.</strong> Often, git displays an error message telling you what command to use to avoid the error.</p>
+					</section>
+					<section>
+						<h2 id="img-trigger1">I want more</h2>
+						<div id="hidden-more" class="hidden-img">
+							<img src="resources/more.png">
+						</div>
+						<p>Here is some more literature</p>
+						<ul>
+							<li><a href="https://rogerdudler.github.io/git-guide/">git - the simple guide</a></li>
+							<li><a href="https://git-scm.com/doc">the official Git documentation</a></a></li>
+							<li><a href="https://docs.gitlab.com/">the official GitLab documentation</a></li>
+							<li><a href="https://en.m.wikibooks.org/wiki/Git">Git at wikibooks</a></li>
+						</ul>
+					</section>
+					<section>
+						<section>
+							<div id="back-to-start" class="navigation-container">
+								<a href="#/start">
+									<i data-feather="chevrons-left" class="icon"></i>
+								</a>
+								<h4>Back to start</h4>
+							</div>
+						<p>This presentation is powered by </p>
+						<a href="https://revealjs.com/"><img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js"></a>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="revealjs/dist/reveal.js"></script>
+		<script src="revealjs/plugin/zoom/zoom.js"></script>
+		<script src="revealjs/plugin/notes/notes.js"></script>
+		<script src="revealjs/plugin/search/search.js"></script>
+		<script src="revealjs/plugin/markdown/markdown.js"></script>
+		<script src="revealjs/plugin/highlight/highlight.js"></script>
+		<script src="https://unpkg.com/feather-icons"></script>
+		<script src="gitlab-tutorial.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+		<script>
+			feather.replace()
+		</script>
+
+	</body>
+</html>

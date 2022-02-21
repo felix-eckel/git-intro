@@ -1,0 +1,557 @@
+/*!
+* Title and general
+*/
+.mail {
+	height: .8em;
+	width: .8em;
+	padding: 0 5px;
+}
+
+.addendum {
+	font-size: .7em;
+}
+
+.canvas {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.canvas-content {
+	position: absolute;
+}
+
+.canvas-content svg {
+	position: absolute;
+}
+
+.navigation-container {
+	display: flex;
+	flex-wrap: nowrap;
+	width: min-content;
+	margin: auto;
+}
+
+.tooltip-source {
+	border-bottom: #f29400 dotted 4px;
+	cursor: help;
+}
+
+.tooltip-box {
+	position: absolute;
+	width: 500px;
+	background: #202020;
+	opacity: 0;
+	border-radius: 15px;
+	z-index: 5;
+	border: #f29400 solid 3px;
+	visibility: hidden;
+	transition: opacity 0.5s;
+}
+
+#tooltip-box-1 {
+	top: 16%;
+	left: 21%;
+}
+
+#tooltip-box-2 {
+	top: 0%;
+	left: 44%;
+}
+
+#tooltip-box-3 {
+	top: 40%;
+	left: 0%;
+}
+
+/*!
+* Why should I use GitLab
+*/
+.two-col-container{
+	display:grid;
+	grid-template-columns: 50% 50%;
+}
+
+.two-col-item{
+	margin: auto;
+	margin-right: 10%;
+}
+
+#forreal3{
+	font-size: .6em;
+	font-family: monospace;
+	background-color: lightgray;
+	color: darkslategray;
+	border-radius: 20px;
+	padding: 0px 20px;
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 430px;
+	padding: 0px 15px 20px 15px;
+	margin-left: 10%;
+}
+
+#forreal3 p{
+	border-right: solid 3px #f29400;
+	animation: cursor 500ms alternate-reverse infinite;
+	text-align: left;
+	width: min-content;
+}
+
+@keyframes cursor {
+	from {border-right-color: #f29400;}
+	to {border-right-color: transparent;} 
+}
+
+#not-found {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+#file-not-found {
+	width: 80%;
+	transform: rotate(-12deg);
+}
+
+#why-guy {
+	width: 40%;
+	margin-left: 30px;
+	transform: scaleX(-1);
+}
+
+#ikea-man {
+	margin-left: -100%;
+}
+
+/*!
+* How it works
+*/
+.icon{
+	width:96px;
+	height:96px;
+}
+
+.workspace{
+	padding-top: 48px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.project{
+	position: absolute;
+	border-radius: 40px;
+}
+
+.project1{
+	background-image: linear-gradient(to left, cyan, cyan);
+}
+
+.project2{
+	background-image: linear-gradient(to left, red, red);
+}
+
+.project3{
+	background-image: linear-gradient(to left, yellow, yellow);
+}
+
+.project4{
+	background-image: linear-gradient(to left, green, green);
+}
+
+.project-merge{
+	background-image: linear-gradient(to left, green, green, green, yellow, yellow, yellow);
+}
+
+.userproject{
+	width: 40px;
+	height: 40px;
+	margin-top: 129px;
+}
+
+.user1project{
+	margin-left: -356px;
+}
+
+.user2project{
+	margin-left: 570px;
+}
+
+.serverproject{
+	width: 10px;
+	height: 10px;
+	margin-top: -135px;
+	margin-left: -15px;
+}
+
+.versionproject{
+	width: 40px;
+	height: 40px;
+	margin-top: -315px;
+}
+
+/*!
+* Cloning and pulling
+*/
+
+#ssh-keygen {
+	max-width: 60%;
+}
+
+#add-ssh-key {
+	max-width: 75%;
+}
+
+#get-ssh-link {
+	max-width: 75%;
+}
+/*!
+* Creating and pushing
+*/
+.screenshot-panel {
+	max-width: 80%;
+	margin: auto;
+	position: relative;
+}
+
+.screenshot-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.screenshot-base {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.screenshot-off {
+	opacity: 0;
+}
+
+.screenshot-on {
+	opacity: 1;
+}
+
+/*!
+* Commits
+*/
+
+#what-is-commit {
+	margin-top: -3%;
+}
+
+.commit-subtitle {
+	margin-top: 38% !important;
+}
+
+.package {
+	width: 150px;
+	height: 150px;
+	left: 67%;
+	margin-top: 16%;
+}
+
+.package-sent {
+	width: 75px;
+	height: 75px;
+	left: 78%;
+	margin-top: 19%;
+}
+
+.commit-truck {
+	width: 200px;
+	height: 200px;
+	stroke-width: 5%;
+	left: 75%;
+	margin-top: 13%;
+}
+
+.commit-monitor {
+	width: 150px;
+	height: 150px;
+	left: 15%;
+	margin-top: 16%;
+}
+
+.commit-file {
+	width: 75px;
+	height: 75px;
+}
+
+.commit-label {
+	width: 75px;
+	height: 75px;
+	margin-top: 21%;
+	left: 82%;
+}
+
+.commit-label-description {
+	font-size: 20%;
+	rotate: 45deg;
+	margin-top: 22.2%;
+	left: 84.5%;
+}
+
+.local-file {
+	left: 19% !important;
+	margin-top: 18.5% !important;
+}
+
+.file-content,
+.file-content-new,
+.file-content-delete {
+	stroke-width: 6%;
+	stroke-linecap: round;
+	top: 0;
+	left: 0;
+}
+
+.file-content {
+	stroke: white;
+}
+
+.file-content-new {
+	stroke: greenyellow;
+}
+
+.file-content-delete {
+	stroke: red;
+}
+
+.file1 {
+	left: 12%;
+	margin-top: 6%;
+}
+
+.file2 {
+	left: 19%;
+	margin-top: 6%;
+}
+
+.file3 {
+	left: 26%;
+	margin-top: 6%;
+}
+
+.file4 {
+	left: 33%;
+	margin-top: 6%;
+}
+
+.file4 svg,
+.file4-package svg {
+	stroke: greenyellow;
+}
+
+.file2-package {
+	left: 70.2% !important;
+	margin-top: 25.5% !important;
+}
+
+.file3-package {
+	left: 73.2% !important;
+	margin-top: 25.5% !important;
+}
+
+.file4-package {
+	left: 76.2% !important;
+	margin-top: 25.5% !important;
+}
+
+.file2-package svg,
+.file3-package svg,
+.file4-package svg {
+	height: 30px !important;
+	width: 30px !important;
+}
+
+.closed svg,
+.closed svg path {
+	stroke: gray !important;
+}
+
+.key {
+	padding: 4px 10px;
+	border: solid #e5e5e5 3px;
+	border-radius: 16px;
+	font-size: smaller;
+	color: #e5e5e5;
+	font-weight: 400;
+}
+
+.key-small {
+	border-width: 1px !important;
+	font-size: 50%;
+	position: relative;
+	top: -5px;
+	border-radius: 8px !important;
+}
+
+.meme {
+	max-width: 40% !important;
+}
+
+/*!
+* branches
+*/
+.branch-subtitle {
+	margin-top: 10% !important;
+	width: 40%;
+	left: 0;
+	height: 6em;
+}
+
+.branch-project {
+	border: solid white 5px;
+	border-radius: 16px;
+}
+
+.branch-project-file {
+	width: 70px;
+	height: 70px;
+	position: relative !important;
+	padding: 10px 10px 0px 10px;
+}
+
+.main-branch {
+	margin-top: 10%;
+	left: 75%;
+}
+
+.new-branch {
+	margin-top: 10%;
+	left: 50%;
+}
+
+.merge-branch {
+	margin-top: 10%;
+	left: 62%;
+}
+
+.construction {
+	width: 80px;
+}
+
+.construction-off {
+	margin-top: -48%;
+	left: 88%;
+}
+
+.construction-on {
+	left: 70%;
+	margin-top: -4%;
+}
+
+.pole {
+	margin-top: -51%;
+	left: 22%;
+}
+
+.pole svg{
+	stroke-width: 12%;
+	stroke-linecap: round;
+	stroke: white;
+}
+
+.new-file {
+	stroke: greenyellow;
+	stroke-width: 2px;
+}
+
+/*!
+* Working in a team
+*/
+
+.screenshot-cols {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.screenshot-cols-img {
+	height: 85%;
+}
+
+.screenshot-cols-text {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 40em;
+}
+
+.menu-highlight {
+	position: absolute;
+	border: #f29400 3px solid;
+	left: 1%;
+	width: 21%;
+	height: 5%;
+}
+
+#menu-info {
+	top: 30.5%;
+}
+
+#menu-issues {
+	top: 39.5%;
+}
+
+#menu-merge {
+	top: 44%;
+}
+
+#menu-wiki {
+	top: 79.5%;
+}
+
+.user-arrow {
+	height: 260px;
+	position: absolute;
+	left: 25%;
+}
+.user-arrow svg{
+	stroke: white;
+	stroke-width: 2px;
+	height: 100%;
+	stroke-linecap: round;
+}
+
+.user-arrow p {
+	position: absolute;
+	transform: rotate(-90deg);
+	min-width: max-content;
+	left: -170%;
+	top: 28%;
+}
+
+#back-to-start {
+	align-items: center;
+	justify-content: center;
+	margin-top: 20%;
+	width: max-content;
+}
+
+/*!
+* More
+*/
+.hidden-img {
+	position: absolute;
+	z-index: 5;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s;
+}
+
+#hidden-more {
+	max-width: 60%;
+	top: 31%;
+	left: 22%;
+}
+
+#img-trigger1 {
+	cursor: help;
+}
